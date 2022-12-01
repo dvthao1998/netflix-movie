@@ -6,7 +6,7 @@ nav {
   align-items: center;
   padding: 25px 55px;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   background-color: transparent;
   left: 50%;
   transform: translateX(-50%);
@@ -107,35 +107,130 @@ main .separate {
 }
 
 .netflix-tv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  padding: 50px 0;
+}
+@media (max-width: 479px) {
+  .netflix-tv {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+.netflix-tv__content {
+  margin-top: 50px;
+}
+.netflix-tv__content p,
+.netflix-tv__content h2 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.netflix-tv__right {
+  height: 100%;
+  display: flex;
+}
+.netflix-tv__show {
+  overflow: hidden;
+  position: relative;
+}
+.netflix-tv__show img {
+  position: relative;
+  z-index: 2;
+}
+.netflix-tv__show .video {
+  height: 100%;
+  overflow: hidden;
+  left: 50%;
+  max-height: 54%;
+  max-width: 73%;
+  position: absolute;
+  top: 47.5%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.netflix-tv__show .video video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.netflix-offline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  padding: 100px 0;
+}
+.netflix-offline__left {
+  position: relative;
+}
+.netflix-offline__left .sub-img {
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 330px;
+  height: 95px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  overflow: hidden;
 }
-.netflix-tv__content {
-  width: 50%;
-  padding-right: 50px;
-}
-.netflix-tv__show {
-  width: 50%;
-  height: 400px;
-  position: relative;
-  z-index: 1;
-}
-.netflix-tv__show video {
-  position: absolute;
-  width: 390px;
-  height: 220px;
-  top: 48%;
-  left: 49.5%;
-  transform: translate(-50%, -50%);
-}
-.netflix-tv__show::before {
-  content: "";
-  position: absolute;
+.netflix-offline__left .sub-img__left {
+  display: flex;
   width: 100%;
-  background: url("../img/tv.png") center center/cover;
-  height: 400px;
-  top: 0;
-  left: 0%;
-  z-index: 2;
+  height: 100%;
+  padding: 10px;
+}
+.netflix-offline__left .sub-img__left img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: -80px;
+}
+.netflix-offline__left .sub-img__content {
+  margin-left: -80px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.netflix-offline__left .sub-img__content h5 {
+  text-align: left;
+}
+.netflix-offline__left .sub-img__content span {
+  color: blue;
+  font-size: 14px;
+  text-align: left;
+}
+.netflix-offline__content {
+  margin: auto;
+}
+.netflix-offline__content h2,
+.netflix-offline__content p {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.netflix-everywhere {
+  grid-gap: 0;
+  padding-top: 0;
+}
+
+.faq {
+  padding: 50px 100px;
+}
+.faq-question__div {
+  margin-top: 10px;
+  width: 100%;
+  background-color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.faq-question__div .bi {
+  font-size: 35px;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
