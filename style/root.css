@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  outline: none;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.text {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.text-lg {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+section {
+  background: black;
+  width: 85%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
