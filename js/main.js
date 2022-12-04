@@ -5,23 +5,34 @@ import { dataAcc, dataEnglish, dataFooter, dataViet } from "./fakeData.js";
 const acco = document.querySelector(".faq-question__box");
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-const renderAcco = dataAcc.map((item) => {
-  return `<article class="faq-question-item">
-  <div class="faq-question__div" >
-    <h4 class="faq-question text-faq text-md"> ${item.question}</h4>
-    <i class="bi bi-plus-circle" ></i>
-  </div>
-  <p class="faq-answer text-faq text-md" >
-    <span>${item.answer}</span>
-  </p>
-  </article>`;
+// const renderAcco = dataAcc.map((item) => {
+//   return `<article class="faq-question-item">
+//   <div class="faq-question__div" >
+//     <h4 class="faq-question text-faq text-md"> ${item.question}</h4>
+//     <i class="bi bi-plus-circle" ></i>
+//   </div>
+//   <p class="faq-answer text-faq text-md" >
+//     <span>${item.answer}</span>
+//   </p>
+//   </article>`;
+// });
+
+let htmlOutput = "";
+dataAcc.forEach(function (item) {
+  htmlOutput += `<article class="faq-question-item">
+       <div class="faq-question__div" >
+         <h4 class="faq-question text-faq text-md"> ${item.question}</h4>
+         <i class="bi bi-plus-circle" ></i>
+       </div>
+       <p class="faq-answer text-faq text-md" >
+         <span>${item.answer}</span>
+       </p>
+       </article>`;
 });
-// acco.innerHTML = renderAcco;
-acco.insertAdjacentHTML("beforeend", renderAcco);
+acco.innerHTML = htmlOutput;
 
 $$(".faq-question__div").forEach((acco) => {
   acco.addEventListener("click", (e) => {
-    console.log(e.target);
     $$(".faq-answer").forEach((ans) => {
       if (
         e.target.nextElementSibling !== ans &&
@@ -82,6 +93,10 @@ $$(".lang-item").forEach((item) =>
         ([...$$(".faq-question")][i].innerText = dataAcc[i].question) &&
           ([...$$(".faq-answer span")][i].innerText = dataAcc[i].answer);
       }
+      $(".faq-desc").innerText =
+        "Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại tư cách thành viên của bạn.";
+      $(".faq button").innerText = dataViet.showCaseButton;
+      $(".faq input").setAttribute("placeholder", dataViet.showCasePlacehoder);
     } else {
       $(".nav-right__login").innerText = "Sign In";
       $(".showcase h1").innerText = dataEnglish.showCaseTitle;
@@ -109,17 +124,36 @@ $$(".lang-item").forEach((item) =>
         ([...$$(".faq-question")][i].innerText = dataAcc[i].questionEnglish) &&
           ([...$$(".faq-answer span")][i].innerText = dataAcc[i].answerEnglish);
       }
+      $(".faq-desc").innerText =
+        "Ready to watch? Enter your email to create or restart your membership.";
+      $(".faq button").innerText = dataEnglish.showCaseButton;
+      $(".faq input").setAttribute(
+        "placeholder",
+        dataEnglish.showCasePlacehoder
+      );
     }
   })
 );
 
 // Footer
 
-$(".footer-wrapper").innerHTML = dataFooter.map((item) => {
-  return `<ul class="footer-list">
-          <a href=""><li class="footer-list-item">${item.line1}</li></a>
-          <a href=""><li class="footer-list-item">${item.line2}</li></a>
-          <a href=""><li class="footer-list-item">${item.line3}</li></a>
-          <a href=""><li class="footer-list-item">${item.line4}</li></a>
-        </ul>`;
+let footerOutput = "";
+dataFooter.forEach(function (item) {
+  footerOutput += `<ul class="footer-list">
+  <a href=""><li class="footer-list-item">${item.line1}</li></a>
+  <a href=""><li class="footer-list-item">${item.line2}</li></a>
+  <a href=""><li class="footer-list-item">${item.line3}</li></a>
+  <a href=""><li class="footer-list-item">${item.line4}</li></a>
+  </ul>`;
+});
+$(".footer-wrapper").innerHTML = footerOutput;
+
+// Navbar
+
+window.addEventListener("scroll", function (event) {
+  if (this.scrollY > 180) {
+    $("nav").style.backgroundColor = "rgba(0, 0, 0, .8)";
+  } else {
+    $("nav").style.backgroundColor = "transparent";
+  }
 });
