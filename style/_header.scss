@@ -1,0 +1,102 @@
+.showcase {
+  background: url("../img/background.jpg") no-repeat center center/cover;
+  max-width: 100%;
+  height: 100vh;
+  position: relative;
+  box-shadow: inset 100px 80px 100px $primary-color,
+    inset -100px -80px 100px $primary-color;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $primary-color, $alpha: 0.2);
+  }
+  &-content {
+    position: absolute;
+    width: 900px;
+    max-width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  h1.text {
+    font-size: 50px;
+    font-weight: 900;
+    margin: auto;
+    max-width: 650px;
+    // width: 1200px;
+  }
+  h4.text {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 16px auto;
+  }
+  p.text {
+    font-size: 23px;
+    margin: 0 42px 20px;
+    padding: 0 70px;
+  }
+}
+
+// Đồng bộ CSS với form ở footer
+.type-email {
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  input {
+    max-width: 80%;
+    min-width: 450px;
+    height: 60px;
+    padding: 10px;
+    outline: none;
+    border: none;
+  }
+  button {
+    background-color: $primary-color-red;
+    padding: 0 13px;
+    font-size: 19px;
+  }
+}
+
+.showcase {
+  @include tablet {
+    .type-email {
+      flex-direction: column;
+      input {
+        margin: 0 auto;
+      }
+      button {
+        padding: 15px;
+        max-width: 50%;
+        border-radius: 5px;
+        margin: 20px auto 0;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 50px 19px;
+    h1.text {
+      font-size: 28px;
+    }
+    h4.text,
+    p.text {
+      font-size: 18px;
+      padding: 0 16px;
+    }
+    h4.text {
+      padding: 0;
+    }
+    .showcase-content {
+      margin: auto;
+      max-width: calc(100% - 40px);
+    }
+  }
+}

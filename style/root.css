@@ -4,8 +4,25 @@
 * {
   margin: 0;
   padding: 0;
+  max-width: 100%;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  /* outline: 1px solid green; */
+  /* 9.console.log*/
+}
+
+body {
+  width: 100vw;
+}
+
+#text {
+  display: none !important;
+}
+
+.separate {
+  width: 100%;
+  height: 10px;
+  background-color: #222;
 }
 
 button {
@@ -47,11 +64,11 @@ a {
 
 section {
   background: black;
-  width: 85%;
+  width: 100%;
   margin: auto;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
 }

@@ -1,0 +1,98 @@
+.faq {
+  padding: 50px 120px;
+  &-question__div {
+    // margin-top: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #303030;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    cursor: pointer;
+    user-select: none;
+    h4 {
+      pointer-events: none; /* dùng để chặn bubbling trong event, JS Notebook trang 62 */
+    }
+    .bi {
+      font-size: 35px;
+      color: #fff;
+      transition: 0.4s;
+      pointer-events: none;
+    }
+  }
+  &-question__div.show {
+    .bi {
+      transform: rotate(135deg);
+    }
+  }
+
+  &-answer {
+    background-color: #303030;
+    border-top: 2px solid #000;
+    padding: 0px;
+    max-height: 0;
+    overflow: hidden;
+    user-select: none;
+    transition: 0.3s ease-out;
+
+    span {
+      display: inline-block;
+      padding: 30px;
+      max-width: 100%;
+    }
+  }
+
+  &-answer.show {
+    max-height: 1200px;
+  }
+}
+
+.faq {
+  @include mobile {
+    padding: 50px 0px;
+    h2 {
+      font-size: 26px;
+    }
+    span,
+    h4 {
+      font-size: 18px;
+    }
+    .faq-desc {
+      font-size: 18px;
+      padding: 0 20px;
+    }
+    input {
+      min-width: 100%;
+    }
+  }
+
+  @include tablet {
+    form {
+      padding: 0 20px;
+    }
+    .type-email {
+      flex-direction: column;
+      input {
+        margin: 0 auto;
+      }
+      button {
+        padding: 15px;
+        max-width: 50%;
+        border-radius: 5px;
+        margin: 20px auto 0;
+      }
+    }
+  }
+
+  &-desc {
+    margin-top: 50px;
+    color: $text-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  input:focus {
+    background-color: #e8f0fe;
+  }
+}

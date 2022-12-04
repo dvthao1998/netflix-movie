@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix Clone By Thao</title>
+    <link rel="icon" type="image/x-icon" href="./img/icon.jpg" />
     <link rel="stylesheet" href="./style/root.css" />
     <link rel="stylesheet" href="./style/style.css" />
   </head>
@@ -27,8 +28,12 @@
       <div class="nav-right">
         <button class="nav-right__lang">
           <i class="bi bi-globe-asia-australia"></i>
-          <span>Tiếng Việt</span>
+          <span class="current-lang">Tiếng Việt</span>
           <i class="bi bi-caret-down-fill"></i>
+          <ul>
+            <li class="lang-item">Tiếng Việt</li>
+            <li class="lang-item">English</li>
+          </ul>
         </button>
         <button class="nav-right__login">Đăng Nhập</button>
       </div>
@@ -51,10 +56,10 @@
       </article>
     </header>
 
-    <main>
-      <div class="separate"></div>
+    <div class="separate"></div>
 
-      <section class="netflix-tv">
+    <main class="main">
+      <section class="netflix netflix-tv netflix-tvl">
         <article class="netflix-tv__content">
           <h2 class="text text-lg">Thưởng thức trên TV của bạn.</h2>
           <p class="text text-md">
@@ -84,9 +89,7 @@
         </div>
       </section>
 
-      <div class="separate"></div>
-
-      <section class="netflix-offline">
+      <section class="netflix netflix-offline netflix-offlinel">
         <div class="netflix-offline__left">
           <img src="./img/mobile-0819.jpg" alt="" />
           <div class="sub-img">
@@ -114,9 +117,7 @@
         </article>
       </section>
 
-      <div class="separate"></div>
-
-      <section class="netflix-tv netflix-everywhere">
+      <section class="netflix netflix-tv netflix-everywhere">
         <article class="netflix-tv__content">
           <h2 class="text text-lg">Xem ở mọi nơi.</h2>
           <p class="text text-md">
@@ -126,9 +127,7 @@
         </article>
       </section>
 
-      <div class="separate"></div>
-
-      <section class="netflix-offline">
+      <section class="netflix netflix-offlinel2">
         <div class="netflix-offline__left">
           <img src="./img/children.png" alt="" />
         </div>
@@ -142,9 +141,7 @@
         </article>
       </section>
 
-      <div class="separate"></div>
-
-      <section class="netflix-offline">
+      <section class="netflix netflix-offlinel3">
         <article class="netflix-offline__content">
           <h2 class="text text-lg mb20">
             Bạn có điện thoại Android? Hãy thử gói dịch vụ miễn phí mới của
@@ -156,51 +153,63 @@
             không cần cung cấp thông tin thanh toán!
           </p>
           <br />
-          <a href="#" class="text text-md"> Download App</a>
+          <a href="#" class="text text-md">
+            Tải ứng dụng <i class="bi bi-caret-right"></i
+          ></a>
         </article>
         <div class="netflix-offline__left">
           <img src="./img/android.jpg" alt="" />
         </div>
       </section>
 
-      <div class="separate"></div>
-
       <section class="faq">
         <h2 class="text text-lg">Câu hỏi thường gặp</h2>
         <br />
-        <div class="faq-question__box">
-          <article class="faq-question-item">
-            <div class="faq-question__div">
-              <h4 class="faq-question text-faq text-md">Netflix la gi?</h4>
-              <i class="bi bi-plus-circle"></i>
-            </div>
-            <p class="faq-answer text-faq text-md">
-              Netflix là dịch vụ phát trực tuyến mang đến đa dạng các loại
-              chương trình truyền hình, phim, anime, phim tài liệu đoạt giải
-              thưởng và nhiều nội dung khác trên hàng nghìn thiết bị có kết nối
-              Internet. Bạn có thể xem bao nhiêu tùy thích, bất cứ lúc nào bạn
-              muốn mà không gặp phải một quảng cáo nào – tất cả chỉ với một mức
-              giá thấp hàng tháng. Luôn có những nội dung mới để bạn khám phá và
-              những chương trình truyền hình, phim mới được bổ sung mỗi tuần!
-            </p>
-          </article>
-          <article class="faq-question-item">
-            <div class="faq-question__div">
-              <h4 class="faq-question text-faq text-md">Netflix la gi?</h4>
-              <i class="bi bi-plus-circle"></i>
-            </div>
-            <p class="faq-answer text-faq text-md">
-              Netflix là dịch vụ phát trực tuyến mang đến đa dạng các loại
-              chương trình truyền hình, phim, anime, phim tài liệu đoạt giải
-              thưởng và nhiều nội dung khác trên hàng nghìn thiết bị có kết nối
-              Internet. Bạn có thể xem bao nhiêu tùy thích, bất cứ lúc nào bạn
-              muốn mà không gặp phải một quảng cáo nào – tất cả chỉ với một mức
-              giá thấp hàng tháng. Luôn có những nội dung mới để bạn khám phá và
-              những chương trình truyền hình, phim mới được bổ sung mỗi tuần!
-            </p>
-          </article>
+        <div class="accordion">
+          <div class="faq-question__box"></div>
         </div>
+        <p class="faq-desc">
+          Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại tư cách
+          thành viên của bạn.
+        </p>
+        <form type="submit" class="type-email">
+          <input type="email" placeholder="Địa chỉ Email" required />
+          <button>Bắt Đầu <i class="bi bi-caret-right"></i></button>
+        </form>
       </section>
     </main>
+
+    <footer class="footer">
+      <a href="" class="footer-desc">Bạn có câu hỏi? Liên hệ với chúng tôi.</a>
+      <div class="footer-wrapper">
+        <ul class="footer-list">
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+        </ul>
+        <ul class="footer-list">
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+        </ul>
+        <ul class="footer-list">
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+        </ul>
+        <ul class="footer-list">
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+          <a href=""><li class="footer-list-item">Câu hỏi thường gặp</li></a>
+        </ul>
+      </div>
+      <span class="footer-last__line">Netflix Việt Nam</span>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
